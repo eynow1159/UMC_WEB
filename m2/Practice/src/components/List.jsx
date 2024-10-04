@@ -1,12 +1,17 @@
-// 직접 props를 받는 부분에서 구조 분해 할당을 진행하는 방법.
+// props를 전달 받고, 그 이후에 구조 분해 할당하는 방법.
 
-const List = ({artistName, foodName}) => {
+const List = (props) => {
+    const {artistName, foodName} = props;
+
     return (
-        <li>
-            {artistName}
-            {foodName}
-        </li>
-    )
+        // listStyle을 통해 제거 가능
+        <>
+            <li style={{listStyle: 'none'}}>
+                {artistName}
+            </li>
+            <li>{foodName}</li>
+        </>
+)
 }
 
 export default List
