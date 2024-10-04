@@ -1,8 +1,8 @@
-const List = (props) => {
-    console.log(props)
+const List = ({artistName, foodName}) => {
     return (
         <li>
-            {props.artistName}
+            {artistName}
+            {foodName}
         </li>
     )
 }
