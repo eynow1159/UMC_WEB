@@ -1,7 +1,8 @@
-const List = () => {
+const List = (props) => {
+    console.log(props)
     return (
         <>
-        
+            {props}
         </>
     )
 }
