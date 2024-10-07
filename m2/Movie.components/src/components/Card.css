@@ -1,0 +1,16 @@
+/* Card hover effect */
+.card:hover .poster {
+    transform: scale(1.1);
+  }
+  
+  .card:hover .info {
+    opacity: 1;
+  }
+  
+  /* Poster container */
+  .poster-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
