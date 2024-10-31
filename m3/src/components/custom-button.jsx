@@ -1,11 +1,18 @@
-// custom-button.jsx
+import styled from "styled-components";
 
 const CustomButton = () => {
     return (
-        <button>
-            커스텀 버튼
-        </button>
+        <FirstStyledSweetPotato>
+            커스텀 고구마 버튼
+        </FirstStyledSweetPotato>
     );
 };
 
 export default CustomButton;
+
+const FirstStyledSweetPotato = styled.button`
+    background-color: purple;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+`
