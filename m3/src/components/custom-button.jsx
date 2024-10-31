@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 const CustomButton = () => {
     return (
         <FirstStyledSweetPotato>
@@ -9,10 +7,3 @@ const CustomButton = () => {
 };
 
 export default CustomButton;
-
-const FirstStyledSweetPotato = styled.button`
-    background-color: purple;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-`
