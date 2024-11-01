@@ -1,15 +1,10 @@
 import styled from "styled-components";
 
-export const FirstStyledSweetPotato = styled.button`
-    background-color: purple;
+const FirstStyledSweetPotato = styled.button`
+    background-color: ${props => props.color || 'purple'};
     border: none;
-    padding: 0;
+    border-radius: 10px;
+    padding: 20px;
     cursor: pointer;
-`;
-
-export const StyledHoverButton = styled.button`
-    &:hover {
-        // 밑줄을 부여한다.
-        text-decoration: underline;
-    }
-`;
+    color: white;
+`

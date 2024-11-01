@@ -1,15 +1,14 @@
-import { FirstStyledSweetPotato, StyledHoverButton } from "../style/components-style.js";
+import { FirstStyledSweetPotato } from "../style/components-style.js";
 
 const CustomButton = () => {
     return (
         <>
-            <FirstStyledSweetPotato>
-                커스텀 고구마 버튼
+            <FirstStyledSweetPotato color={'purple'}>
+                고구마
             </FirstStyledSweetPotato>
-
-            <StyledHoverButton>
-                밑줄
-            </StyledHoverButton>
+            <FirstStyledSweetPotato>
+                고구마
+            </FirstStyledSweetPotato>
         </>
     );
 };
