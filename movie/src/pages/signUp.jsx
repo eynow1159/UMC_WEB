@@ -1,3 +1,9 @@
-export default function Signup() {
-    return <>회원가입</>;
-  }
+import * as S from '../style/pages/signUp.js'
+
+export default function SignUp() {
+  return (
+    <>
+    signUp
+    </>
+  );
+};

@@ -6,16 +6,13 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import HomePage from "./pages/home.jsx";
 import NotFound from "./pages/not-found.jsx";
 
-// import LoginPage from "./pages/loginPage.jsx";
-// import SignUpPage from "./pages/signupPage.jsx";
-
-// import SearchPage from "./pages/searchPage.jsx";
-// import MovieCategoryPage from "./pages/movieCategoryPage.jsx";
-
+import LogInPage from "./pages/logIn.jsx";
+import SignUpPage from "./pages/signUp.jsx";
 import SearchPage from "./pages/search.jsx";
 
-import MovieCategoryPage from "./pages/movies.jsx";
+import MovieCategoryPage from "./pages/movieCategory.jsx";
 import MoviesPage from "./pages/movies.jsx";
+
 import RootLayout from "./layout/root-layout.jsx";
 
 // 연결
@@ -32,19 +29,32 @@ const router = createBrowserRouter([
                 element: <HomePage/>
             },
             {
+              path: 'logIn',
+              element: <LogInPage/>
+            },
+            {
+              path: 'signUp',
+              element: <SignUpPage/>
+            },
+            {
               path: 'search',
               element: <SearchPage/>
             },
             {
-                // 부모의 path가 '/'이니, /를 붙이지 않아도 /movies랑 동일하게 동작한다.
-                path: 'movies',
-                element: <MovieCategoryPage/>
+              // 부모의 path가 '/'이니, /를 붙이지 않아도 /movies랑 동일하게 동작한다.
+              path: 'movies',
+              children: [
+                {
+                    index: true,
+                    element: <MovieCategoryPage/>
+                },
+                {
+                  // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
+                  path: ':movieId',
+                  element: <MoviesPage/>
+                }
+              ]
             },
-            {
-              // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
-              path: 'movies/:movieId',
-              element: <MoviesPage/>
-            }
         ]
     },
 

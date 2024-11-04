@@ -2,18 +2,29 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavLogo = styled(Link)`
-  color: white;
+  color: red;
   font-size: 1.5rem;
   font-weight: 700;
   text-decoration: none;
 `;
 
 export const NavWrapper = styled.nav`
-  padding: 1rem;
+  position: fixed;
+  weight: 100vh;
+  height: 60px;
+  top: 0;
+  left: 0;
+
+  background-color: #222222;
+  
+  padding: 5px;
   display: flex;
+  gap: 1rem;
   flex-direction: row;
+
   align-items: center;
   justify-content: space-between;
+  
 `;
 
 export const NavMenu = styled.div`

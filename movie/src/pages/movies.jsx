@@ -4,19 +4,28 @@ import * as S from '../style/pages/movies.js'
 import {useEffect, useState} from "react";
 import axios from "axios";
 
+const URL = import.meta.env.VITE_MOVIE_API_URL;
+const TOKEN = import.meta.env.VITE_MOVIE_API_TOKEN;
+
+console.log("API Token: ", TOKEN);
+
 const MoviesPage = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
         const getMovies = async () => {
-            const movies = await axios.get(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1`, {
-                headers: {
-                    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNTNkYWIyMDkxMzI2Y2Y3NTkwNTAwYjQyODNkNjZkNyIsIm5iZiI6MTcyNjE0MTU3Ny42MDM2ODcsInN1YiI6IjY0MzVmY2Y2NjUxZmNmMDBkM2RhYzNmNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cFPsPRHPidq2OnJ3U-3wHJYhnGajDFqUsM8XJ_a_0bw`
-                }
-            })
-            setMovies(movies);
-        }
-        getMovies()
+            try {
+                const movies = await axios.get(URL, {
+                    headers: {
+                        Authorization: `Bearer ${ TOKEN }`
+                    }
+                });
+                setMovies(movies);
+            } catch (error) {
+                console.error("Error fetching movies:", error);
+            }
+        };
+        getMovies();
     }, []);
 
     // Optional Chaining 활용

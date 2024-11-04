@@ -1,7 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
-export const StyledCard = styled(Link)`
+
+export const CategoryWrapper = styled.div`  
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+
+  gap: 1rem;
+`;
+
+export const StyledCategory = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -12,9 +22,12 @@ export const StyledCard = styled(Link)`
   color: white;
 `;
 
-export const CardText = styled.span`
+export const CategoryText = styled.span`
   font-size: 0.8rem;
   font-weight: ${(props) => (props?.bold === "true" ? 700 : 400)};
+  text-decoration: none;
+  color: white;
+
 `;
 
 export const StyledImage = styled.img`
