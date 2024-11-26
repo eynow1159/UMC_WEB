@@ -1,20 +1,25 @@
+// import * as C from "../style/components/circle.js";
+
+import * as C from "../style/components/contents.js";
+
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
 import useCustomFetch from "../hooks/useCustomFetch";
 
-export default function MovieDetail() {
+const MovieDetail = () => {
   const { movieId } = useParams();
 
   const { isLoading, data, error } = useCustomFetch(
     `/movie/${movieId}?language=ko-KR&append_to_response=credits`
   );
 
+
   return (
-    <Wrapper>
-      {isLoading && <span>Loading...</span>}
+    <C.Container>
+      <C.Title></C.Title>
+      <C.Wrapper>{isLoading && <span>Loading...</span>}
       {!!data && (
         <>
-          <Header>
+          <S.Header>
             <div
               style={{
                 position: "absolute",
@@ -42,73 +47,34 @@ export default function MovieDetail() {
               <h4>{data?.runtime}분</h4>
             </div>
             <img src={`https://image.tmdb.org/t/p/original${data?.backdrop_path}`} />
-          </Header>
-          <Content>
+          </S.Header>
+
+          <S.Content>
             <p style={{ padding: "63px 16px 64px 16px", fontStyle: "italic", color: "gray" }}>
               {data?.overview}
             </p>
-            <Cast>
+            <S.Cast>
               <h2>감독/출연</h2>
-              <div style={{ marginTop: "8px", display: "flex", flexWrap: "wrap" }}>
-                {data?.credits?.cast?.map((person, i) => (
-                  <Person key={person?.credit_id}>
-                    <img src={`https://image.tmdb.org/t/p/original${person?.profile_path}`} />
-                    <strong>{person?.original_name}</strong>
-                    <p style={{ color: "gray", fontSize: "0.9rem", padding: "0.25rem" }}>
-                      {person?.character}
-                    </p>
-                  </Person>
-                ))}
-              </div>
-            </Cast>
-          </Content>
+                  {/* <S.Person>
+                  {data?.credits?.cast?.map((person, i) => (
+                    // <Circle key={person?.credit_id}>
+                    //   <img src={`https://image.tmdb.org/t/p/original${person?.profile_path}`} />
+                    //   <strong>{person?.original_name}</strong>
+                    //   <CircleText>
+                    //     {person?.character}
+                    //   </CircleText>
+                    // </Circle>
+                  ))}
+                  </S.Person> */}
+            </S.Cast>
+          </S.Content>
         </>
       )}
       {error && <span>Error!</span>}
-    </Wrapper>
+      </C.Wrapper>
+    </C.Container>
   );
 }
 
-const Wrapper = styled.div`
-  display: block;
-  padding: 8px;
-`;
 
-const Header = styled.div`
-  position: relative;
-  border-radius: 16px;
-  height: 20rem;
-  overflow: hidden;
-
-  & img {
-    width: 100%;
-  }
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
-const Cast = styled.div`
-  display: block;
-`;
-
-const Person = styled.div`
-  margin: 4px;
-  width: 8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  overflow: hidden;
-  border-radius: 16px;
-
-  & img {
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-    &:hover {
-      filter: brightness(50%);
-    }
-  }
-`;
+export default MovieDetail;

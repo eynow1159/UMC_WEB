@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const SidebarWrapper = styled.div`
-  position: fixed;
+export const Container = styled.div`
+  position: sticky;
   weight: 250px;
   height: calc(100vh - 60px);
   top: 60px;
@@ -14,13 +14,9 @@ export const SidebarWrapper = styled.div`
   display: flex;
   gap: 1rem;
   flex-direction: column;
-
-  gap: 1rem;
-
-  position: fixed;
 `;
 
-export const SidebarMenu = styled(Link)`
+export const Wrapper = styled(Link)`
   padding: 1rem;
   display: flex;
   flex-direction: row;
@@ -32,7 +28,7 @@ export const SidebarMenu = styled(Link)`
   }
 `;
 
-export const SidebarMenuText = styled.span`
+export const Text = styled.span`
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;

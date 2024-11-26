@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Logo = styled(Link)`
+export const SNSLogo = styled(Link)`
   color: red;
   font-size: 1.5rem;
   font-weight: 700;
@@ -34,7 +34,7 @@ export const Wrapper = styled.div`
   gap: 1rem;
 `;
 
-export const Button = styled(Link)`
+export const Section = styled(Link)`
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 8px;
   color: white;

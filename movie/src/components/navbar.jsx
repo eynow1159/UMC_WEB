@@ -1,14 +1,18 @@
-import { NavLogo, NavWrapper, NavMenu, MenuButton } from "../style/components/navbar.js";
+import * as N from "../style/components/navbar.js";
 
 const Navbar = () => {
     return (
-        <NavWrapper>
-          <NavLogo to={'/'}>EYNOW</NavLogo>
-          <NavMenu>
-            <MenuButton to={'/login'} fontSize={'13px'} padding={'0px 12px'} margin={'14px 5px'} hovercolor={'#2C2D2F'}>로그인</MenuButton>
-            <MenuButton to={'/signUp'} fontSize={'13px'} padding={'0px 12px'} margin={'14px 5px'} backcolor={'#F82F62'} hovercolor={'#FF3D6E'}>회원가입</MenuButton>
-          </NavMenu>
-        </NavWrapper>
+        <N.Container>
+          <N.Logo to={'/'}>EYNOW</N.Logo>
+          <N.Wrapper>
+            <N.Button to={'/login'}>
+              <N.Text>로그인</N.Text>
+            </N.Button>
+            <N.Button to={'/signUp'}>
+              <N.Text>회원가입</N.Text>
+            </N.Button>
+          </N.Wrapper>
+        </N.Container>
       )
 }
 

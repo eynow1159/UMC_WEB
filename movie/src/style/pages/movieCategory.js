@@ -39,4 +39,51 @@ export const StyledImage = styled.img`
   &:hover {
     opacity: 0.5;
   }
+`;const MovieCategoryBox = styled.div`
+display: flex;
+gap: 10px;
+flex-flow: wrap;
 `;
+
+const MovieCategory = styled(Link)`
+flex: 1 1 calc(25% - 5px);
+max-width: calc(25% - 10px);
+position: relative;
+border-radius: 5px;
+overflow: hidden;
+box-sizing: border-box;
+
+transition: all 0.4s ease;
+
+@media (max-width: 1400px){
+  flex: 1 1 calc(33.33% - 10px);
+  max-width: calc(33.33% - 10px);
+}
+
+@media (max-width: 1100px){
+  flex: 1 1 calc(50% - 10px);
+  max-width: calc(50% - 10px);
+}
+
+@media (max-width: 600px){
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+`;
+
+const Image = styled.img`
+width: 100%;
+`;
+
+const ImageText = styled.div`
+position: absolute;
+font-size: 13px;
+bottom: 5%;
+left: 2%;
+color: white;
+font-family: Pretendard-Regular;
+
+padding: 1%;
+border-radius: 5px;
+background-color: #00000099;
+`

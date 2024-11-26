@@ -10,6 +10,8 @@ export const StyledCard = styled(Link)`
   overflow: hidden;
   text-decoration: none;
   color: white;
+  width: 125px;
+  height: 190px;
 `;
 
 export const CardText = styled.span`

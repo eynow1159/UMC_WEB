@@ -1,3 +1,5 @@
+import * as C from "../style/components/contents.js";
+
 import {useEffect, useState} from "react";
 
 const SearchPage = () => {
@@ -23,12 +25,16 @@ const SearchPage = () => {
         }
     }, [counter]);
     return (
-        <>
+        <C.Container>
+          <C.Title>검색페이지</C.Title>
+          <C.Wrapper>
             <h1 style={{color: 'white'}}>
                 {counter}
             </h1>
             <button onClick={handleClick}>+</button>
-        </>
+
+          </C.Wrapper>
+        </C.Container>
     );
 };
 

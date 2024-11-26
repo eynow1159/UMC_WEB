@@ -1,15 +1,18 @@
-import { SidebarWrapper, SidebarMenu, SidebarMenuText } from "../style/components/sidebar.js";
+import * as S from "../style/components/sidebar.js";
+import { CiSearch } from "react-icons/ci";
+import { MdLocalMovies } from "react-icons/md";
+
 
 const Sidebar = () => {
   return (
-    <SidebarWrapper>
-      <SidebarMenu to="/search">
-        <SidebarMenuText>검색</SidebarMenuText>
-      </SidebarMenu>
-      <SidebarMenu to="/movies">
-        <SidebarMenuText>영화</SidebarMenuText>
-      </SidebarMenu>
-    </SidebarWrapper>
+    <S.Container>
+      <S.Wrapper to="/search">
+        <S.Text><CiSearch />검색</S.Text>
+      </S.Wrapper>
+      <S.Wrapper to="/movies">
+        <S.Text><MdLocalMovies />영화</S.Text>
+      </S.Wrapper>
+    </S.Container>
   );
 };
 

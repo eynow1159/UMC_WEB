@@ -12,6 +12,7 @@ import SearchPage from "./pages/search.jsx";
 
 import MovieCategoryPage from "./pages/movieCategory.jsx";
 import MoviesPage from "./pages/movies.jsx";
+import MovieDetail from "./pages/movieDetail.jsx";
 
 import RootLayout from "./layout/root-layout.jsx";
 
@@ -45,13 +46,22 @@ const router = createBrowserRouter([
               path: 'movies',
               children: [
                 {
-                    index: true,
-                    element: <MovieCategoryPage/>
+                  index: true,
+                  element: <MovieCategoryPage/>
                 },
                 {
                   // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
-                  path: ':movieId',
-                  element: <MoviesPage/>
+                  path: ':movieCategoryId',
+                  children: [
+                    {
+                      index: true,
+                      element: <MoviesPage/>
+                    },
+                    {
+                      path: ':movieId',
+                      element: <MovieDetail/>
+                    }
+                  ]
                 }
               ]
             },

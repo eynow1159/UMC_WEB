@@ -1,11 +1,11 @@
 import Card from "../components/card.jsx";
 
-import * as S from '../style/pages/movies.js'
+import * as C from "../style/components/contents.js";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-const URL = import.meta.env.VITE_MOVIE_API_URL;
-const TOKEN = import.meta.env.VITE_MOVIE_API_TOKEN;
+const URL = process.env.REACT_APP_MOVIE_API_URL;
+const TOKEN = process.env.REACT_APP_MOVIE_API_TOKEN;
 
 console.log("API Token: ", TOKEN);
 
@@ -30,12 +30,16 @@ const MoviesPage = () => {
 
     // Optional Chaining 활용
     return (
-        <S.CardList>
+        <C.Container>
+          <C.Title></C.Title>
+          <C.Wrapper>
             {movies.data?.results.map((movie) => (
                 <Card key={movie.id} movie={movie}/>
             ))}
-        </S.CardList>
-    )
+
+          </C.Wrapper>
+        </C.Container>
+      )
 };
 
 export default MoviesPage;

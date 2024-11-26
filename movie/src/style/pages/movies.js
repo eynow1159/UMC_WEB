@@ -5,7 +5,7 @@ export const CardList = styled.div`
     flex-wrap: wrap;
     gap: 16px;
 
-    padding: '1rem';
-    flexDirection: 'row';
-    gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))';
+    padding: 2rem;
+    flexDirection: row;
+    gridTemplateColumns: repeat(auto-fill, minmax(150px, 1fr));
 `;

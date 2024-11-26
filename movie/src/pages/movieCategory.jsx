@@ -1,46 +1,38 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import styled from "styled-components";
-import Card from "../components/card";
-import { useParams } from "react-router-dom";
-import useCustomFetch from "../hooks/useCustomFetch";
+import * as C from "../style/components/contents.js";
 
 export default function MovieCategory() {
-  const { category } = useParams();
-
-  const { isLoading, data, error } = useCustomFetch(
-    ((category) => {
-      switch (category) {
-        case "now-playing":
-          return "https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1";
-
-        case "popular":
-          return "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1";
-
-        case "top-rated":
-          return "https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1";
-
-        case "up-coming":
-          return "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1";
-      }
-    })(category)
-  );
 
   return (
-    <Wrapper>
-      {isLoading && <span>Loading...</span>}
-      {data?.results?.map((movie, i) => (
-        <Card key={movie?.id} movie={movie} />
-      ))}
-    </Wrapper>
+    <C.Container>
+      <C.Title>카테고리</C.Title>
+      <C.Wrapper>
+        <MovieCategoryBox>
+          <MovieCategory to={'./now_playing'}>
+            {/* <Image
+              src={"/src/asset/"}
+            ></Image> */}
+            <ImageText>현재 상영중인</ImageText>
+          </MovieCategory>
+          <MovieCategory to={'./popular'}>
+            {/* <Image
+              src={"/src/asset/"}
+            ></Image> */}
+            <ImageText>인기있는</ImageText>
+          </MovieCategory>
+          <MovieCategory to={'./top_rated'}>
+            {/* <Image
+              src={"/src/asset/"}
+            ></Image> */}
+            <ImageText>높은 평가를 받은</ImageText>
+          </MovieCategory>
+          <MovieCategory to={'./upcoming'}>
+            {/* <Image
+              src={"/src/asset/"}
+            ></Image> */}
+            <ImageText>개봉 예정중인</ImageText>
+          </MovieCategory>
+        </MovieCategoryBox>
+      </C.Wrapper>
+    </C.Container>
   );
 }
-
-const Wrapper = styled.div`
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-`;
