@@ -2,18 +2,17 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  position: sticky;
-  weight: 250px;
-  height: calc(100vh - 60px);
-  top: 60px;
-  left: 0;
-
-  background-color: #222222;
-  
-  padding: 1rem;
-  display: flex;
   gap: 1rem;
   flex-direction: column;
+
+  background-color: #222222;
+  color: white;
+  position: sticky;
+  top: 50px;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  padding: 10px;
+  max-width: 300px;
 `;
 
 export const Wrapper = styled(Link)`

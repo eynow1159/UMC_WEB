@@ -9,22 +9,21 @@ export const Logo = styled(Link)`
 `;
 
 export const Container = styled.nav`
-  position: sticky;
-  weight: 100vh;
-  height: 60px;
-  top: 0;
-  left: 0;
+  height: 50px;
 
-  background-color: #222222;
-  
-  padding: 5px;
-  display: flex;
   gap: 1rem;
   flex-direction: row;
 
-  align-items: center;
+  grid-column: 1 / -1;
+  background-color: #222222;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
   justify-content: space-between;
-  
+  align-items: center;
 `;
 
 export const Wrapper = styled.div`

@@ -1,6 +1,7 @@
 // import * as C from "../style/components/circle.js";
 
 import * as C from "../style/components/contents.js";
+import * as P from "../style/pages/movieDetail.js";
 
 import { useParams } from "react-router-dom";
 import useCustomFetch from "../hooks/useCustomFetch";
@@ -19,7 +20,7 @@ const MovieDetail = () => {
       <C.Wrapper>{isLoading && <span>Loading...</span>}
       {!!data && (
         <>
-          <S.Header>
+          <P.Header>
             <div
               style={{
                 position: "absolute",
@@ -47,15 +48,15 @@ const MovieDetail = () => {
               <h4>{data?.runtime}분</h4>
             </div>
             <img src={`https://image.tmdb.org/t/p/original${data?.backdrop_path}`} />
-          </S.Header>
+          </P.Header>
 
-          <S.Content>
+          <P.Content>
             <p style={{ padding: "63px 16px 64px 16px", fontStyle: "italic", color: "gray" }}>
               {data?.overview}
             </p>
-            <S.Cast>
+            <P.Cast>
               <h2>감독/출연</h2>
-                  {/* <S.Person>
+                  {/* <P.Person>
                   {data?.credits?.cast?.map((person, i) => (
                     // <Circle key={person?.credit_id}>
                     //   <img src={`https://image.tmdb.org/t/p/original${person?.profile_path}`} />
@@ -65,9 +66,9 @@ const MovieDetail = () => {
                     //   </CircleText>
                     // </Circle>
                   ))}
-                  </S.Person> */}
-            </S.Cast>
-          </S.Content>
+                  </P.Person> */}
+            </P.Cast>
+          </P.Content>
         </>
       )}
       {error && <span>Error!</span>}

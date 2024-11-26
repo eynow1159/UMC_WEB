@@ -39,13 +39,15 @@ export const StyledImage = styled.img`
   &:hover {
     opacity: 0.5;
   }
-`;const MovieCategoryBox = styled.div`
+`;
+
+export const MovieCategoryBox = styled.div`
 display: flex;
 gap: 10px;
 flex-flow: wrap;
 `;
 
-const MovieCategory = styled(Link)`
+export const MovieCategory = styled(Link)`
 flex: 1 1 calc(25% - 5px);
 max-width: calc(25% - 10px);
 position: relative;
@@ -71,11 +73,18 @@ transition: all 0.4s ease;
 }
 `;
 
-const Image = styled.img`
-width: 100%;
+export const Image = styled.img`
+  width: 100%;
+
+  transition: all 0.3s ease;
+
+  &:hover{
+    filter: brightness(50%);
+    cursor: pointer;
+  }
 `;
 
-const ImageText = styled.div`
+export const ImageText = styled.div`
 position: absolute;
 font-size: 13px;
 bottom: 5%;

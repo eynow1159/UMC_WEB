@@ -1,25 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-padding: 60px 0px 0px 240px;
-transition: all 0.3s ease, min-height 0s ease;
+  transition: all 0.3s ease, min-height 0s ease;
+  box-sizing: border-box;
 
-background-color: black;
-
-min-height: 100vh;
-
-box-sizing: border-box;
-
-@media (max-width: 850px){
-  padding-left: 0px;
-}
+  background-color: black;
+  padding: 20px;
+  overflow-y: auto;
+  justify-content: space-between;
+  
 `;
 
 export const Wrapper = styled.div`
-padding: 0px 40px 60px 40px;
-box-sizing: border-box;
-width: 100%;
-overflow: auto;
+  padding: 0px 40px 60px 40px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: auto;
 `;
 
 export const Title = styled.h1`

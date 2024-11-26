@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             {
                 // index: true는 위의 path: '/' 즉, 홈 경로를 의미한다.
                 index: true,
-                element: <HomePage/>
+                element: <MoviesPage/>
             },
             {
               path: 'logIn',
