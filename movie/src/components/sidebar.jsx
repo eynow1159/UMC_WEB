@@ -9,7 +9,7 @@ const Sidebar = () => {
       <S.Wrapper to="/search">
         <S.Text><CiSearch />검색</S.Text>
       </S.Wrapper>
-      <S.Wrapper to="/movies">
+      <S.Wrapper to="/category">
         <S.Text><MdLocalMovies />영화</S.Text>
       </S.Wrapper>
     </S.Container>

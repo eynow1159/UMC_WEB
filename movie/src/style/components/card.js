@@ -10,7 +10,7 @@ export const StyledCard = styled(Link)`
   overflow: hidden;
   text-decoration: none;
   color: white;
-  width: 125px;
+  min-width: 125px;
   height: 190px;
 `;
 

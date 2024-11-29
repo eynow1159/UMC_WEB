@@ -4,14 +4,17 @@ export const Container = styled.div`
   transition: all 0.3s ease, min-height 0s ease;
   box-sizing: border-box;
 
+  flex-grow: 1;
+
   background-color: black;
   padding: 20px;
   overflow-y: auto;
   justify-content: space-between;
-  
+  height: calc(100vh - 50px);
 `;
 
 export const Wrapper = styled.div`
+  display: flex;
   padding: 0px 40px 60px 40px;
   box-sizing: border-box;
   width: 100%;

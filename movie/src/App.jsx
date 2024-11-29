@@ -42,21 +42,35 @@ const router = createBrowserRouter([
               element: <SearchPage/>
             },
             {
-              // 부모의 path가 '/'이니, /를 붙이지 않아도 /movies랑 동일하게 동작한다.
-              path: 'movies',
+              path: 'category',
               children: [
                 {
                   index: true,
                   element: <MovieCategoryPage/>
                 },
                 {
-                  // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
                   path: ':movieCategoryId',
                   children: [
                     {
                       index: true,
                       element: <MoviesPage/>
-                    },
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              // 부모의 path가 '/'이니, /를 붙이지 않아도 /movies랑 동일하게 동작한다.
+              path: 'movies',
+              children: [
+                {
+                  index: true,
+                  element: <MoviesPage/>
+                },
+                {
+                  // /:을 활용해서, 동적으로 바뀌는 부분의 이름을 정의해줍시다.
+                  path: ':movieCategoryId',
+                  children: [
                     {
                       path: ':movieId',
                       element: <MovieDetail/>

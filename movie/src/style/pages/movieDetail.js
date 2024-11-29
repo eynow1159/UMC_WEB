@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Section = styled.div`
   display: block;
   padding: 8px;
-`;
 
-
-export const Header = styled.div`
   position: relative;
   border-radius: 16px;
   height: 20rem;
@@ -15,15 +12,24 @@ export const Header = styled.div`
   & img {
     width: 100%;
   }
-`;
 
-
-export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  position: "absolute";
+  top: 16;
+  left: 16;
+  padding: "8px";
+  display: "flex";
+  flexDirection: "column";
+  alignItems: "start";
+  gap: "8px";
 `;
 
+
+export const Text = styled.p`
+`;
 
 export const Cast = styled.div`
   display: block;

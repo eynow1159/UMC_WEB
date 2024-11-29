@@ -9,10 +9,10 @@ function RootLayout(){
   return (
     <Layout>
       <Navbar/>
-      <div style={{display:"flex",flexDirection:"row"}}>  
+      <Main>  
         <Sidebar/>
         <Outlet/>
-      </div>   
+      </Main>   
       {/* <Footer/> */}
     </Layout>
   )
@@ -21,8 +21,13 @@ function RootLayout(){
 export default RootLayout;
 
 const Layout = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
+  display: flex;
   height: 100vh;
+  flex-direction: column;
 `;
+
+const Main = styled.div`
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+`

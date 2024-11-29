@@ -2,25 +2,35 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledCircle = styled(Link)`
-  margin: 4px;
-  width: 8rem;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: start;
+  gap: 0.5rem;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: 16px;
+  text-decoration: none;
 
-  & img {
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-    &:hover {
-      filter: brightness(50%);
-    }
-  }
+  align-items: center;
+  width: 100px;
+  text-align: center;
+  color: white;
 `;
 
 export const CircleText = styled.span`
-  color: "gray";
-  fontSize: "0.9rem";
-  padding: "0.25rem";
+  font-size: 0.8rem;
+  font-weight: ${(props) => (props?.bold === "true" ? 700 : 400)};
+  font-size: ${(props) => (props?.bold === "true" ? 700 : 400)};
+  color: ${(props) => (props?.bold === "true" ? 700 : 400)};
+`;
+
+export const StyledImage = styled.img`
+  background-color: black;
+  transition: all 200ms ease-in-out;
+  
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid white;
 `;
