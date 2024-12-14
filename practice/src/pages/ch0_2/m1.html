@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미션 1 - 정렬 기능 활용 Navbar 만들어보기</title>
+    <style>
+        /* Navbar container */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Space between left and right sections */
+            align-items: center; /* Center items vertically */
+            background-color: #1e1e1e; /* Dark background */
+            padding: 10px 20px; /* Adjust padding for spacing */
+            color: #fff; /* Text color */
+            font-family: Arial, sans-serif; /* Font style */
+
+
+            background-color: #fff;
+            color: #1e1e1e;
+        }
+
+        /* Left side (Logo and Title) */
+        .navbar-left {
+            display: flex;
+            align-items: center; /* Align logo and title vertically */
+        }
+
+        .navbar-logo {
+            height: 40px; /* Adjust size of the logo */
+            margin-right: 10px; /* Add space between logo and title */
+        }
+
+        .navbar-title {
+            font-size: 18px; /* Adjust font size for the title */
+            font-weight: bold; /* Make it bold */
+            color: #fff; /* Ensure title matches text color */
+            
+            color: #1e1e1e;
+        }
+
+        /* Right side (Links and Icon) */
+        .navbar-right {
+            display: flex;
+            align-items: center; /* Center links and icon vertically */
+            gap: 20px; /* Space between items */
+        }
+
+        .navbar-link {
+            text-decoration: none; /* Remove underline from links */
+            color: #fff; /* White text for links */
+            font-size: 14px; /* Adjust font size */
+            font-weight: bold; /* Bold links */
+            transition: color 0.3s; /* Smooth hover effect */
+
+            color: #1e1e1e;
+
+        }
+
+        .navbar-link:hover {
+            color: #00d1b2; /* Highlight color on hover */
+        }
+
+        .navbar-icon {
+            height: 20px; /* Adjust icon size */
+            cursor: pointer; /* Pointer cursor for the icon */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="logo.png" alt="Logo" class="navbar-logo" />
+            <span class="navbar-title">UMC</span>
+        </div>
+        <div class="navbar-right">
+            <a href="#projects" class="navbar-link">PROJECTS</a>
+            <a href="#members" class="navbar-link">MEMBERS</a>
+            <a href="#notice" class="navbar-link">NOTICE</a>
+            <img src="moon-icon.png" alt="Dark Mode" class="navbar-icon" />
+        </div>
+    </nav>
+    
+    <div>어쩌구<div>
+</body>
+
+</html>
