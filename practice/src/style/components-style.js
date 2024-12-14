@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FirstStyledSweetPotato = styled.button`
+export const FirstStyledSweetPotato = styled.button`
     background-color: ${props => props.color || 'purple'};
     border: none;
     border-radius: 10px;
